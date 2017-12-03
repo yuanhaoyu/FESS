@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>test</title>
+</head>
+<body>
+  
+</body>
+<script src="index.js"></script>
+<script src="test.api.js"></script>
+<script>
+var fess = new FESS('http://localhost:8080', ['test', 'test3'], API)
+var api = fess.$install()
+api.test(1,2,3)
+api.test2(2)
+api.test3(3)
+setTimeout(() => {
+  fess.$send('aaaaaaa')
+}, 1000)
+setTimeout(() => {
+  fess.$sendErr('test', 9, {name: 'yhy', sex: 'man'})
+}, 1000)
+</script>
+</html>
